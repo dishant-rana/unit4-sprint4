@@ -24,11 +24,11 @@ export const getProductsDataSuccess = (payload) => {
   };
 };
 const getProductsData = () => (dispatch) => {
-  dispatch(getProductsDataLoading);
+  dispatch(getProductsDataLoading());
   fetch(" https://movie-fake-server.herokuapp.com/products")
     .then((res) => res.json())
     .then((res) => dispatch(getProductsDataSuccess(res)))
-    .catch(() => dispatch(getProductsDataError));
+    .catch(() => dispatch(getProductsDataError()));
 };
 
 const sortProducts = (payload) => {
